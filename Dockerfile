@@ -2,7 +2,7 @@ FROM python:3.13.18-slim-trixie@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d
 
 FROM base AS development
 WORKDIR /workspace
-RUN chown 10001:10001 /workspace
+RUN mkdir -p /app && chown 10001:10001 /workspace
 LABEL eu.ringfour.development-source="/workspace"
 USER 10001:10001
 ENTRYPOINT ["python", "/workspace/main.py"]
