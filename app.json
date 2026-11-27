@@ -1,0 +1,54 @@
+{
+  "schema_version": 2,
+  "app_key": "my-ringfour-app",
+  "release": "0.1.0",
+  "display": {
+    "name": "My Ringfour App",
+    "description": "Print a configurable greeting to the App run output."
+  },
+  "targets": [
+    {
+      "os": "linux",
+      "architecture": "amd64",
+      "native_requirements": [],
+      "repository": "127.0.0.1:5000/ringfour/my-ringfour-app"
+    }
+  ],
+  "capabilities": {
+    "required": [],
+    "optional": []
+  },
+  "configuration": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "greeting": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        }
+      },
+      "required": [
+        "greeting"
+      ]
+    },
+    "defaults": {
+      "greeting": "Hello from Ringfour!"
+    },
+    "environment": {
+      "GREETING": "greeting"
+    }
+  },
+  "build": {
+    "dockerfile": "Dockerfile",
+    "files": [
+      "main.py",
+      ".dockerignore"
+    ]
+  },
+  "wheel_bundle": {
+    "version": "0.1.1.dev0",
+    "sha256": "78301da6097376e69e024bb7254a1d5aa8a7e79615e622d872bab3e0676de7f5"
+  }
+}

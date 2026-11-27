@@ -1,0 +1,7 @@
+.env
+.env.*
+.venv/
+__pycache__/
+.ringfour/
+app.manifest.json
+python-wheels/
